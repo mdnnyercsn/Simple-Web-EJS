@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 700px;
+  margin: 10px auto;
+}
+
+header {
+  margin: 20px 0;
+}
+footer {
+  margin: 20px 0;
+}
