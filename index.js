@@ -2,8 +2,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 const expressLayouts = require("express-ejs-layouts");
 
+const miniMailRoutes = require("./routers/miniMailRoutes");
+const miniMailConnection = require("./database/miniMailDatabase");
+
 const app = express();
 dotenv.config({path: "./config.env"});
+miniMailConnection();
 
 // static files
 app.use(express.static("public"));
