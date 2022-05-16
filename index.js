@@ -1,7 +1,9 @@
 const express = require("express");
+const dotenv = require("dotenv");
 const expressLayouts = require("express-ejs-layouts");
 
 const app = express();
+dotenv.config({path: "./config.env"});
 
 // static files
 app.use(express.static("public"));
@@ -16,6 +18,6 @@ app.get("/", function(req, res) {
   res.render("home");
 });
 
-app.listen(3004, function() {
+app.listen(process.env.PORT || 3004, function() {
   console.log("server is running");
 });
