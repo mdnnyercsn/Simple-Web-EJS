@@ -9,6 +9,10 @@ const app = express();
 dotenv.config({path: "./config.env"});
 miniMailConnection();
 
+// parse JSON
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 // static files
 app.use(express.static("public"));
 app.use("/css", express.static(__dirname + "public/css"));
@@ -18,9 +22,7 @@ app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.set("layout", "./layouts/homeLayout");
 
-app.get("/", function(req, res) {
-  res.render("home");
-});
+app.use("/v1", miniMailRoutes);
 
 app.listen(process.env.PORT || 3004, function() {
   console.log("server is running");
