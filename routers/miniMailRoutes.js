@@ -10,6 +10,7 @@ router.put("/mail/:id", miniMailController.updateMiniMail);
 router.delete("/mail/:id", miniMailController.deleteMiniMail);
 
 router.get("/", miniMailController.home);
-router.get("/create", miniMailController.createYourMiniMail)
+router.get("/create", miniMailController.createYourMiniMail);
+router.get("/show-all", miniMailController.allMiniMail);
 
 module.exports = router;

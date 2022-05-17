@@ -1,0 +1,24 @@
+<div class="show-all-mini-mail layout-container">
+  <div class="mini-mail-item">
+    <% for (let i = 0; i < miniMail.length; i++) { %> 
+      <table class="show-table">
+        <tr>
+          <td>ID : </td>
+          <td><%= miniMail[i]._id %></td>
+        </tr>
+        <tr>
+          <td>Name : </td>
+          <td><%= miniMail[i].name %></td>
+        </tr>
+        <tr>
+          <td>Message : </td>
+          <td><%= miniMail[i].message %></td>
+        </tr>
+        <tr>
+          <td>Date Create : </td>
+          <td><%= miniMail[i].date.slice(0,10) %></td>
+        </tr>
+      </table>
+    <% } %>
+  </div>
+</div>

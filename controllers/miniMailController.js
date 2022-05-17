@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 const MiniMail = require("../models/miniMailModel");
 
 module.exports = {
@@ -55,5 +57,16 @@ module.exports = {
   },
   createYourMiniMail: async function(req, res) {
     res.render("createMiniMail", {layout: "./layouts/createMiniMailLayout"})
+  },
+  allMiniMail: async function(req, res) {
+    try {
+      await axios.get("http://localhost:3004/v1/mails")
+        .then(response => res.render("showAllMiniMail", {miniMail: response.data}))
+        // .then(res.render("showAllMiniMail", {miniMail: res.data}))
+        // .then(console.log(res))
+        .catch(error => console.log(error))
+    } catch (error) {
+      
+    }
   }
 }
