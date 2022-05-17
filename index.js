@@ -15,7 +15,6 @@ app.use(express.urlencoded({extended: true}));
 
 // static files
 app.use(express.static("public"));
-app.use("/css", express.static(__dirname + "public/css"));
 
 // set view engine
 app.set("view engine", "ejs");

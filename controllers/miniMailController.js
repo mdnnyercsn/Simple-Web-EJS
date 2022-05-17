@@ -5,7 +5,7 @@ module.exports = {
     const newMiniMail = await new MiniMail(req.body);
     try {
       const miniMail = await newMiniMail.save();
-      res.status(200).json(miniMail);
+      res.redirect("/v1/create");
     } catch (error) {
       res.status(500).json({message: error.message});
     }
@@ -49,5 +49,11 @@ module.exports = {
     } catch (error) {
       res.status(500).json({message: error.MiniMail});
     }
+  },
+  home: async function(req, res) {
+    res.render("home");
+  },
+  createYourMiniMail: async function(req, res) {
+    res.render("createMiniMail", {layout: "./layouts/createMiniMailLayout"})
   }
 }
