@@ -7,13 +7,43 @@
 .container {
   width: 700px;
   margin: 10px auto;
+  padding: 10px;
+  background-color: beige;
+  box-shadow: 10px 10px 17px -1px rgba(0, 0, 0, 0.37);
+  border-radius: 15px;
 }
 
+/* HEADER */
 header {
   margin: 20px 0;
 }
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+}
+
+header nav ul li {
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+
+header nav ul li:hover {
+  background-color: rgb(221, 221, 117);
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
 footer {
-  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 12px;
 }
 
 .show-table {
